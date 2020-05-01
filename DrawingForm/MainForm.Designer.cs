@@ -36,21 +36,29 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelDataBlocks = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pbSend = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblPoints = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblSegments = new System.Windows.Forms.Label();
+            this.pbOnline = new System.Windows.Forms.PictureBox();
+            this.pbOffline = new System.Windows.Forms.PictureBox();
             this.pbClear = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbSend = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblConnecting = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblDataSent = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOnline)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOffline)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbClear)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblY
@@ -130,36 +138,6 @@
             this.panelDataBlocks.TabIndex = 10;
             this.panelDataBlocks.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDataBloks_Paint);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::DrawingForm.Properties.Resources.arrow__1_;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(524, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pbSend
-            // 
-            this.pbSend.BackgroundImage = global::DrawingForm.Properties.Resources.send1;
-            this.pbSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbSend.Location = new System.Drawing.Point(468, 12);
-            this.pbSend.Name = "pbSend";
-            this.pbSend.Size = new System.Drawing.Size(40, 40);
-            this.pbSend.TabIndex = 11;
-            this.pbSend.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(828, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblPoints);
@@ -206,6 +184,28 @@
             this.lblSegments.TabIndex = 5;
             this.lblSegments.Text = "DU";
             // 
+            // pbOnline
+            // 
+            this.pbOnline.BackgroundImage = global::DrawingForm.Properties.Resources.onLine;
+            this.pbOnline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbOnline.Location = new System.Drawing.Point(763, 12);
+            this.pbOnline.Name = "pbOnline";
+            this.pbOnline.Size = new System.Drawing.Size(40, 40);
+            this.pbOnline.TabIndex = 17;
+            this.pbOnline.TabStop = false;
+            this.pbOnline.Visible = false;
+            // 
+            // pbOffline
+            // 
+            this.pbOffline.BackgroundImage = global::DrawingForm.Properties.Resources.offLine;
+            this.pbOffline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbOffline.Location = new System.Drawing.Point(763, 12);
+            this.pbOffline.Name = "pbOffline";
+            this.pbOffline.Size = new System.Drawing.Size(40, 40);
+            this.pbOffline.TabIndex = 16;
+            this.pbOffline.TabStop = false;
+            this.pbOffline.Click += new System.EventHandler(this.pbOffline_Click);
+            // 
             // pbClear
             // 
             this.pbClear.BackgroundImage = global::DrawingForm.Properties.Resources.cancel;
@@ -217,12 +217,81 @@
             this.pbClear.TabStop = false;
             this.pbClear.Click += new System.EventHandler(this.pbClear_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::DrawingForm.Properties.Resources.arrow__1_;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(524, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pbSend
+            // 
+            this.pbSend.BackgroundImage = global::DrawingForm.Properties.Resources.send1;
+            this.pbSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbSend.Location = new System.Drawing.Point(468, 12);
+            this.pbSend.Name = "pbSend";
+            this.pbSend.Size = new System.Drawing.Size(40, 40);
+            this.pbSend.TabIndex = 11;
+            this.pbSend.TabStop = false;
+            this.pbSend.Click += new System.EventHandler(this.pbSend_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(828, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // lblConnecting
+            // 
+            this.lblConnecting.AutoSize = true;
+            this.lblConnecting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConnecting.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblConnecting.Location = new System.Drawing.Point(688, 32);
+            this.lblConnecting.Name = "lblConnecting";
+            this.lblConnecting.Size = new System.Drawing.Size(115, 20);
+            this.lblConnecting.TabIndex = 6;
+            this.lblConnecting.Text = "Connecting...";
+            this.lblConnecting.Visible = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblDataSent);
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.groupBox3.Location = new System.Drawing.Point(623, 98);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(221, 60);
+            this.groupBox3.TabIndex = 18;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Last Sent Data";
+            // 
+            // lblDataSent
+            // 
+            this.lblDataSent.AutoSize = true;
+            this.lblDataSent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataSent.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblDataSent.Location = new System.Drawing.Point(6, 21);
+            this.lblDataSent.Name = "lblDataSent";
+            this.lblDataSent.Size = new System.Drawing.Size(0, 25);
+            this.lblDataSent.TabIndex = 5;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(856, 671);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.lblConnecting);
+            this.Controls.Add(this.pbOnline);
+            this.Controls.Add(this.pbOffline);
             this.Controls.Add(this.pbClear);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -237,15 +306,20 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDataBloks_Paint);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSend)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOnline)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOffline)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -266,6 +340,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblSegments;
         private System.Windows.Forms.PictureBox pbClear;
+        private System.Windows.Forms.PictureBox pbOffline;
+        private System.Windows.Forms.PictureBox pbOnline;
+        private System.Windows.Forms.Label lblConnecting;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblDataSent;
     }
 }
 
