@@ -20,6 +20,7 @@ namespace DrawingForm
         Queue<double[]> queue;
         Consumer c1;
         String wemosIp = "";
+        bool abort;
 
 
         DrawingTools DT;
@@ -87,6 +88,7 @@ namespace DrawingForm
                         updateLabel(e.Data);
                     };
 
+                    abort = true;
                     checkConnThread = new Thread(() => checkConnection());
                     checkConnThread.Start();
 
@@ -171,19 +173,8 @@ namespace DrawingForm
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             c1.Stop();
-            comThread.Interrupt();
-            if (!comThread.Join(2000))
-            {
-                comThread.Abort();
-            }
-            comThread.Join();
-
-            checkConnThread.Interrupt();
-            if (!checkConnThread.Join(2000))
-            {
-                checkConnThread.Abort();
-            }
-            checkConnThread.Join();
+            abort = false;
+            ws.Close();
             this.Close();
             this.Dispose();
 
@@ -206,7 +197,7 @@ namespace DrawingForm
         private void checkConnection()
         {
 
-            while (true)
+            while (abort)
             {
                 if (ws.IsAlive)
                 {
