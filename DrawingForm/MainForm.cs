@@ -29,7 +29,7 @@ namespace DrawingForm
         Pen pen;
         const int penUp = 100000;
         int x = penUp;
-        int y = -penUp;
+        int y = penUp;
 
 
 
@@ -78,9 +78,9 @@ namespace DrawingForm
         {
             try
             {
-                wemosIp = "192.168.1.188";
+                wemosIp = "192.168.1.183";
 
-                using (ws = new WebSocket("wss://echo.websocket.org/"))
+                using (ws = new WebSocket("ws://" + wemosIp + ":81"))
                 {
                     ws.Connect();
                     ws.OnMessage += (sender, e) =>
@@ -293,6 +293,7 @@ namespace DrawingForm
                 foreach (double[] dot in dotsList)
                 {
                     queue.Enqueue(dot);
+                    
                 }
 
                 dotsList = new List<double[]>();
