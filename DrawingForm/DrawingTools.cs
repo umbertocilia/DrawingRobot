@@ -4,7 +4,9 @@ namespace RobotLib
 {
     public class DrawingTools
     {
-        
+
+        private int shift = 45;
+
         public double A { get => a; set => a = value; }
         private double a;
         public double B { get => b; set => b = value; }

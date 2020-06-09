@@ -36,7 +36,7 @@ namespace WebSocketTools
 
                     SendDot(queue.Dequeue(), ws);
 
-                    Thread.Sleep(20);
+                    Thread.Sleep(30);
                 }
                 
             }
