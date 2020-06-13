@@ -50,10 +50,6 @@
     <Reference Include="websocket-sharp">
       <HintPath>bin\Plug-ins\websocket-sharp.dll</HintPath>
     </Reference>
-    <Reference Include="websocket-sharp-core">
-      <HintPath>bin\websocket-sharp-core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Consumer.cs" />

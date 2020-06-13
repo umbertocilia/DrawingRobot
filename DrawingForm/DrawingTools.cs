@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 
 namespace RobotLib
 {
@@ -41,7 +42,17 @@ namespace RobotLib
 
             double alfa = Math.Atan2(y , x) - Math.Atan2(calcQ2y,calcQ2x);
 
-            return ToDegres(alfa);
+            double alfaDeg = ToDegres(alfa) ;
+
+            if(alfaDeg <= 0)
+            {
+                return double.NaN;
+            }
+            else
+            {
+                return alfaDeg;
+            }
+            
         }
 
         public double GetBeta(double x, double y)
@@ -54,7 +65,17 @@ namespace RobotLib
 
             double alfa = Math.Atan2(y, x) - Math.Atan2(calcQ2y, calcQ2x);
 
-            return ToDegres(beta);
+            double betaDeg = ToDegres(beta);
+
+            if (betaDeg <= 0)
+            {
+                return double.NaN;
+            }
+            else
+            {
+                return betaDeg;
+            }
+
         }
 
 

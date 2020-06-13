@@ -118,13 +118,13 @@ namespace DrawingForm
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left && !Double.IsNaN(DT.GetBeta(340 - e.Location.Y, e.Location.X)))
+            if (e.Button == System.Windows.Forms.MouseButtons.Left && !Double.IsNaN(DT.GetBeta(340 - e.Location.Y, e.Location.X)) && !Double.IsNaN(DT.GetAlfa(340 - e.Location.Y, e.Location.X)))
             {
                 addPoint(x, y);
                 x = e.X;
                 y = e.Y;
                 g.DrawLine(pen, new Point(x + 1, y + 1), e.Location);
-                addPoint(DT.GetAlfa(340 - e.Location.Y, e.Location.X), DT.GetBeta(340 - e.Location.Y, e.Location.X));
+                addPoint(135 - DT.GetAlfa(340 - e.Location.Y, e.Location.X), 135 - DT.GetBeta(340 - e.Location.Y, e.Location.X) + DT.GetAlfa(340 - e.Location.Y, e.Location.X));
                 mouseIsDown = true;
                 panel1.Cursor = Cursors.Cross;
             }
@@ -136,7 +136,7 @@ namespace DrawingForm
             mouseIsDown = false;
             x = penUp; y = penUp;
             panel1.Cursor = Cursors.Default;
-            if (!Double.IsNaN(DT.GetBeta(340 - e.Location.Y, e.Location.X))) addPoint(x, y);
+            if (!Double.IsNaN(DT.GetBeta(340 - e.Location.Y, e.Location.X)) && !Double.IsNaN(DT.GetAlfa(340 - e.Location.Y, e.Location.X))) addPoint(x, y);
             this.Invalidate();
         }
 
@@ -149,7 +149,7 @@ namespace DrawingForm
             {
 
 
-                if (Double.IsNaN(DT.GetBeta(340 - e.Location.Y, e.Location.X)))
+                if (Double.IsNaN(DT.GetBeta(340 - e.Location.Y, e.Location.X)) || Double.IsNaN(DT.GetAlfa(340 - e.Location.Y, e.Location.X)))
                 {
                     mouseIsDown = false;
                     if (dotsList.Last()[0] != penUp) addPoint(penUp, penUp);
