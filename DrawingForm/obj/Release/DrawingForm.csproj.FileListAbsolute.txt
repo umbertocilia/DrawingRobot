@@ -1,0 +1,10 @@
+C:\Users\DAPHNE\Desktop\DrawingRobot\DrawingForm\bin\Release\DrawingForm.exe.config
+C:\Users\DAPHNE\Desktop\DrawingRobot\DrawingForm\bin\Release\DrawingForm.exe
+C:\Users\DAPHNE\Desktop\DrawingRobot\DrawingForm\bin\Release\DrawingForm.pdb
+C:\Users\DAPHNE\Desktop\DrawingRobot\DrawingForm\obj\Release\DrawingForm.csprojAssemblyReference.cache
+C:\Users\DAPHNE\Desktop\DrawingRobot\DrawingForm\obj\Release\DrawingForm.MainForm.resources
+C:\Users\DAPHNE\Desktop\DrawingRobot\DrawingForm\obj\Release\DrawingForm.Properties.Resources.resources
+C:\Users\DAPHNE\Desktop\DrawingRobot\DrawingForm\obj\Release\DrawingForm.csproj.GenerateResource.cache
+C:\Users\DAPHNE\Desktop\DrawingRobot\DrawingForm\obj\Release\DrawingForm.csproj.CoreCompileInputs.cache
+C:\Users\DAPHNE\Desktop\DrawingRobot\DrawingForm\obj\Release\DrawingForm.exe
+C:\Users\DAPHNE\Desktop\DrawingRobot\DrawingForm\obj\Release\DrawingForm.pdb
